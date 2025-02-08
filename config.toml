@@ -1,0 +1,5 @@
+baseURL = 'https://fukufuku2025.github.io/ansible-hands-on/'
+languageCode = 'ja-jp'
+title = 'Ansible handson Site'
+theme = 'ananke'
+theme = "ananke"
