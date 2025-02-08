@@ -2,14 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/</loc>
-    <lastmod>2025-02-08T17:53:26+09:00</lastmod>
+    <loc>http://localhost:57488/posts/ansible-environment/</loc>
+    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/</loc>
-    <lastmod>2025-02-08T17:53:26+09:00</lastmod>
+    <loc>http://localhost:57488/</loc>
+    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>http://localhost:57488/posts/</loc>
+    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>http://localhost:57488/categories/</loc>
+  </url><url>
+    <loc>http://localhost:57488/tags/</loc>
   </url>
 </urlset>

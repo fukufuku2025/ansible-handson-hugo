@@ -1,8 +1,9 @@
-+++
-date = '2025-02-08T17:53:26+09:00'
-draft = true
-title = 'Ansible Environment'
-+++
+---
+title: "Ansible Environment"
+date: 2023-02-08T12:00:00
+publishDate: 2023-02-08T12:00:00
+draft: false
+---
 # 開発環境のセットアップ
 
 この章では、開発に必要なツールをセットアップします。  
