@@ -1,5 +1,0 @@
-baseURL = "http://localhost:1313"
-languageCode = "ja-jp"
-title = "Ansible Handson Site"
-theme = "ananke"
-
