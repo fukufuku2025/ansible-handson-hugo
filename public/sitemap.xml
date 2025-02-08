@@ -2,38 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/hello/</loc>
-    <lastmod>2025-02-08T21:52:27+09:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/ansible-environment/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/</loc>
     <lastmod>2023-02-08T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansiblebasic/</loc>
-    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/executeplaybook/</loc>
-    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/executerole/</loc>
-    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/modifyrole/</loc>
-    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/playbook/</loc>
-    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/role/</loc>
-    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/launchdocker/</loc>
-    <lastmod>2023-02-08T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/tags/</loc>
   </url>
 </urlset>
