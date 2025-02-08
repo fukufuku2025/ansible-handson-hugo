@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ansible　ハンズオン</title>
+    <link>http://localhost:1313/ansible-handson-hugo/</link>
+    <description>Recent content on Ansible　ハンズオン</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 08 Feb 2023 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/ansible-handson-hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible HandsOn</title>
+      <link>http://localhost:1313/ansible-handson-hugo/posts/</link>
+      <pubDate>Wed, 08 Feb 2023 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ansible-handson-hugo/posts/</guid>
+      <description>&lt;h1 id=&#34;ansible-ハンズオン-デモ&#34;&gt;Ansible ハンズオン デモ&lt;/h1&gt;&#xA;&lt;h2 id=&#34;目次&#34;&gt;目次&lt;/h2&gt;&#xA;&lt;p&gt;以下のリンクから各章にアクセスできます。順番に進めていきましょう！&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;章&lt;/th&gt;&#xA;          &lt;th&gt;タイトル&lt;/th&gt;&#xA;          &lt;th&gt;リンク&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第1章&lt;/td&gt;&#xA;          &lt;td&gt;環境構築&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/ansible-handson-hugo/ansible-environment/&#34;&gt;使用するツールのインストール&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第2章&lt;/td&gt;&#xA;          &lt;td&gt;テスト環境を構築する&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/ansible-handson-hugo/launchdocker/&#34;&gt;Dockerコンテナの起動&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第3章&lt;/td&gt;&#xA;          &lt;td&gt;Inventoryファイルを作る&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/ansible-handson-hugo/ansiblebasic/&#34;&gt;Inventoryファイル（&lt;code&gt;inventory.ini&lt;/code&gt;）を作る&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第4章&lt;/td&gt;&#xA;          &lt;td&gt;Roleを作る&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/ansible-handson-hugo/role/&#34;&gt;Roleのディレクトリ構造を作る&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第5章&lt;/td&gt;&#xA;          &lt;td&gt;Playbookを作る&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/ansible-handson-hugo/playbook/&#34;&gt;playbook.ymlを作る&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第6章&lt;/td&gt;&#xA;          &lt;td&gt;Playbookの実行&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/ansible-handson-hugo/executerole/&#34;&gt;Playbookを実行する&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第7章&lt;/td&gt;&#xA;          &lt;td&gt;Roleを更に作る&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/ansible-handson-hugo/modifyrole/&#34;&gt;Roleにテンプレートを追加&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;第8章&lt;/td&gt;&#xA;          &lt;td&gt;Roleの実行&lt;/td&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/ansible-handson-hugo/ansible-hands-on-hugo/executeplaybook&#34;&gt;Roleを更新し、実行確認&lt;/a&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+    </item>
+  </channel>
+</rss>
