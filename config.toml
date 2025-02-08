@@ -1,4 +1,4 @@
-baseURL = "https://fukufuku2025.github.io/ansible-handson-hugo/"
+baseURL = "http://localhost:1313"
 languageCode = "ja-jp"
 title = "Ansible Handson Site"
 theme = "ananke"
