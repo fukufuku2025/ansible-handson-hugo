@@ -10,58 +10,58 @@
     <atom:link href="https://fukufuku2025.github.io/ansible-handson-hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Playbook</title>
-      <link>https://fukufuku2025.github.io/ansible-handson-hugo/playbook/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/posts/playbook/</link>
       <pubDate>Sat, 08 Feb 2025 22:25:02 +0900</pubDate>
-      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/playbook/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/posts/playbook/</guid>
       <description>&lt;p&gt;プレイブックを使って、Ansibleで実行するタスクを記述します。この例では、&lt;code&gt;httpd&lt;/code&gt;をインストールするタスクをroleで定義したのでそれを呼ぶように記載します。&lt;/p&gt;&#xA;&lt;p&gt;Playbookの作成&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Deploy Apache Server&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;hosts&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;all&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;become&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;yes&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;roles&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;　  - &lt;span style=&#34;color:#ae81ff&#34;&gt;httpd&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;このPlaybookは、&lt;code&gt;alll&lt;/code&gt;ホスト（Dockerコンテナ）に対して&lt;code&gt;httpd&lt;/code&gt;をインストールし、サービスを開始するタスクを実行します。&lt;/p&gt;&#xA;&lt;p&gt;ホスト間の疎通確認の実行方法&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ansible all -i inventory.ini -m ping&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Role</title>
-      <link>https://fukufuku2025.github.io/ansible-handson-hugo/role/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/posts/role/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:57 +0900</pubDate>
-      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/role/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/posts/role/</guid>
       <description>&lt;p&gt;Roleを使ってタスクを整理し、再利用可能な構造にします。まず、&lt;code&gt;httpd&lt;/code&gt;を管理するRoleを作成します。&lt;/p&gt;&#xA;&lt;p&gt;本番環境とかでのディレクトリ構造&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;roles/&#xA;└── httpd/&#xA;    ├── defaults/&#xA;    │   └── main.yml&#xA;    ├── tasks/&#xA;    │   └── main.yml&#xA;    ├── handlers/&#xA;    │   └── main.yml&#xA;    ├── templates/&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;roles/httpd/tasks/main.yml の内容&#xA;作成した &lt;code&gt;main.yml&lt;/code&gt; に、Apache（httpd）のインストールと起動のタスクを記述します。&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;installed my httpd&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;dnf&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;httpd&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;state&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;installed&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Modifyrole</title>
-      <link>https://fukufuku2025.github.io/ansible-handson-hugo/modifyrole/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/posts/modifyrole/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:51 +0900</pubDate>
-      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/modifyrole/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/posts/modifyrole/</guid>
       <description>&lt;p&gt;httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します&lt;/p&gt;&#xA;&lt;p&gt;ディレクトリ構成&#xA;以下のような構成でファイルを配置します。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ansible_project/&#xA;├── ansible.cfg&#xA;├── inventory.ini&#xA;├── playbook.yml&#xA;└── roles/&#xA;    └── httpd/&#xA;    　　├── defaults/&#xA;    　　│   └── main.yml&#xA;    　　├── handlers/&#xA;    　　│   └── main.yml&#xA;    　　├── meta/&#xA;    　　│   └── main.yml&#xA;    　　├── tasks/&#xA;    　　│   └── main.yml&#xA;    　　└── templates/&#xA;    　　    └── httpd.conf.j2&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;httpd roleにtemplateディレクトリを追加します&#xA;Ansibleで管理するホストを指定するためのファイルを作成します。&lt;code&gt;inventory.ini&lt;/code&gt;は、ホストの情報を記述するために使います。&lt;/p&gt;&#xA;&lt;p&gt;Inventoryファイルの作成&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;web_servers]&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;web1 ansible_host=192.168.1.33&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;web2 ansible_host=192.168.1.34&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Launchdocker</title>
-      <link>https://fukufuku2025.github.io/ansible-handson-hugo/launchdocker/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/posts/launchdocker/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:43 +0900</pubDate>
-      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/launchdocker/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/posts/launchdocker/</guid>
       <description>&lt;p&gt;テスト用のDockerコンテナをリポジトリファイルをバインドして起動します。このコンテナ上でAnsibleを使用して操作します。&lt;/p&gt;&#xA;&lt;p&gt;コンテナの作成と実行&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ docker compose up -d&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ docker exec -it ansible sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cd ansible_project&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;これで、&lt;code&gt;ansible&lt;/code&gt;という名前のコンテナが起動し、その中にアクセスすることができます。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Executerole</title>
-      <link>https://fukufuku2025.github.io/ansible-handson-hugo/executerole/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/posts/executerole/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:32 +0900</pubDate>
-      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/executerole/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/posts/executerole/</guid>
       <description>&lt;p&gt;では実行してみましょう&lt;br&gt;&#xA;▽実行方法&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ansible-playbook playbook.yml&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Executeplaybook</title>
-      <link>https://fukufuku2025.github.io/ansible-handson-hugo/executeplaybook/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/posts/executeplaybook/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:26 +0900</pubDate>
-      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/executeplaybook/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/posts/executeplaybook/</guid>
       <description>&lt;p&gt;Roleを更新し実行します。&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ansible-playbook playbook.yml&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Ansiblebasic</title>
-      <link>https://fukufuku2025.github.io/ansible-handson-hugo/ansiblebasic/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/posts/ansiblebasic/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:17 +0900</pubDate>
-      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/ansiblebasic/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/posts/ansiblebasic/</guid>
       <description>&lt;p&gt;Ansibleで管理するホストを指定するためのファイルを作成します。&lt;code&gt;inventory.ini&lt;/code&gt;は、ホストの情報を記述するために使います。&lt;/p&gt;&#xA;&lt;p&gt;Inventoryファイルの作成&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;web_servers]&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;web1 ansible_host=192.168.1.33&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;web2 ansible_host=192.168.1.34&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;このファイルにより、AnsibleがDockerコンテナに接続できるようになります。&lt;/p&gt;&#xA;&lt;p&gt;ディレクトリ構成&#xA;以下のような構成でファイルを配置します。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ansible_project/&#xA;├── ansible.cfg&#xA;├── inventory.ini&#xA;├── playbook.yml&#xA;└── roles/&#xA;    └── httpd/&#xA;        └── tasks/&#xA;            └── main.yml&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;各ファイルの役割&#xA;ansible.cfg - Ansibleの設定ファイル&#xA;inventory.ini - 管理対象ホストのリスト&#xA;playbook.yml - 自動化タスクを定義&#xA;roles/httpd/tasks/main.yml - HTTPD（Apache）をインストール・設定するタスク&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ansible Environment</title>
-      <link>https://fukufuku2025.github.io/ansible-handson-hugo/ansible-environment/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/posts/ansible-environment/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:02 +0900</pubDate>
-      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/ansible-environment/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/posts/ansible-environment/</guid>
       <description>&lt;p&gt;この章では、開発に必要なツールをセットアップします。 これらのツールを使用して、効率的に開発を進めるための準備を行います。 ざっくり記載してるので環境構築の詳細はAIとかに聞いてください&lt;/p&gt;&#xA;&lt;p&gt;1.1.1: Visual Studio Code (VSCode) のインストール&#xA;Visual Studio Code（VSCode）は、軽量で強力なコードエディタです。 以下の方法でインストールできます。&lt;/p&gt;&#xA;&lt;p&gt;Microsoft Storeからインストールする場合：&lt;/p&gt;&#xA;&lt;h1 id=&#34;microsoft-storeからvscodeをインストール&#34;&gt;Microsoft StoreからVSCodeをインストール&lt;/h1&gt;&#xA;&lt;h1 id=&#34;microsoft-storeを開きvisual-studio-codeを検索しインストール&#34;&gt;Microsoft Storeを開き、「Visual Studio Code」を検索し、インストール&lt;/h1&gt;&#xA;&lt;p&gt;公式ページからインストールする場合：&lt;/p&gt;&#xA;&lt;h1 id=&#34;公式サイトからvscodeをダウンロード&#34;&gt;公式サイトからVSCodeをダウンロード&lt;/h1&gt;&#xA;&lt;h1 id=&#34;httpscodevisualstudiocom-からインストーラーをダウンロードしインストール&#34;&gt;&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;https://code.visualstudio.com/&lt;/a&gt; からインストーラーをダウンロードし、インストール&lt;/h1&gt;&#xA;&lt;p&gt;1.1.2: Dockerのインストール&#xA;Dockerを使用してコンテナを簡単に構築・管理できます。&lt;/p&gt;&#xA;&lt;p&gt;今回はWSL2のUbuntu24.04上で下記のバージョンを使用します。 Docker-DesktopのIntegrationを有効にしておきます。&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ docker -v&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Docker version 26.1.3, build 26.1.3-0ubuntu1~24.04.1 &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;1.1.3:git リポジトリのクローン&#xA;git clone でリポジトリをalpien Linuxの中にクローンする&lt;/p&gt;&#xA;&lt;p&gt;WSL2のalpine linuxの中でリポジトリをクローンするには下記のコマンドを実行します&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git clone https://github.com/fukufuku2025/ansible-hands-on.git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Role | Ansible　ハンズオン</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Roleを使ってタスクを整理し、再利用可能な構造にします。まず、httpdを管理するRoleを作成します。
+本番環境とかでのディレクトリ構造
+roles/
+└── httpd/
+    ├── defaults/
+    │   └── main.yml
+    ├── tasks/
+    │   └── main.yml
+    ├── handlers/
+    │   └── main.yml
+    ├── templates/
+roles/httpd/tasks/main.yml の内容
+作成した main.yml に、Apache（httpd）のインストールと起動のタスクを記述します。
+- name: installed my httpd
+ dnf:
+    name: httpd
+    state: installed
+これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
+    <meta name="generator" content="Hugo 0.143.1">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ansible-handson-hugo/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://fukufuku2025.github.io/ansible-handson-hugo/posts/role/">
+    
+
+    <meta property="og:url" content="https://fukufuku2025.github.io/ansible-handson-hugo/posts/role/">
+  <meta property="og:site_name" content="Ansible　ハンズオン">
+  <meta property="og:title" content="Role">
+  <meta property="og:description" content="Roleを使ってタスクを整理し、再利用可能な構造にします。まず、httpdを管理するRoleを作成します。
+本番環境とかでのディレクトリ構造
+roles/ └── httpd/ ├── defaults/ │ └── main.yml ├── tasks/ │ └── main.yml ├── handlers/ │ └── main.yml ├── templates/ roles/httpd/tasks/main.yml の内容 作成した main.yml に、Apache（httpd）のインストールと起動のタスクを記述します。
+- name: installed my httpd dnf: name: httpd state: installed これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
+  <meta property="og:locale" content="ja_jp">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-08T22:24:57+09:00">
+    <meta property="article:modified_time" content="2025-02-08T22:24:57+09:00">
+
+  <meta itemprop="name" content="Role">
+  <meta itemprop="description" content="Roleを使ってタスクを整理し、再利用可能な構造にします。まず、httpdを管理するRoleを作成します。
+本番環境とかでのディレクトリ構造
+roles/ └── httpd/ ├── defaults/ │ └── main.yml ├── tasks/ │ └── main.yml ├── handlers/ │ └── main.yml ├── templates/ roles/httpd/tasks/main.yml の内容 作成した main.yml に、Apache（httpd）のインストールと起動のタスクを記述します。
+- name: installed my httpd dnf: name: httpd state: installed これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
+  <meta itemprop="datePublished" content="2025-02-08T22:24:57+09:00">
+  <meta itemprop="dateModified" content="2025-02-08T22:24:57+09:00">
+  <meta itemprop="wordCount" content="38">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Role">
+  <meta name="twitter:description" content="Roleを使ってタスクを整理し、再利用可能な構造にします。まず、httpdを管理するRoleを作成します。
+本番環境とかでのディレクトリ構造
+roles/ └── httpd/ ├── defaults/ │ └── main.yml ├── tasks/ │ └── main.yml ├── handlers/ │ └── main.yml ├── templates/ roles/httpd/tasks/main.yml の内容 作成した main.yml に、Apache（httpd）のインストールと起動のタスクを記述します。
+- name: installed my httpd dnf: name: httpd state: installed これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/ansible-handson-hugo/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Ansible　ハンズオン
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Role</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-02-08T22:24:57+09:00">February 8, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Roleを使ってタスクを整理し、再利用可能な構造にします。まず、<code>httpd</code>を管理するRoleを作成します。</p>
+<p>本番環境とかでのディレクトリ構造</p>
+<pre tabindex="0"><code>roles/
+└── httpd/
+    ├── defaults/
+    │   └── main.yml
+    ├── tasks/
+    │   └── main.yml
+    ├── handlers/
+    │   └── main.yml
+    ├── templates/
+</code></pre><p>roles/httpd/tasks/main.yml の内容
+作成した <code>main.yml</code> に、Apache（httpd）のインストールと起動のタスクを記述します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">installed my httpd</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">dnf</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">installed</span>
+</span></span></code></pre></div><p>これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://fukufuku2025.github.io/ansible-handson-hugo/" >
+    &copy;  Ansible　ハンズオン 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

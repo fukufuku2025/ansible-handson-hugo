@@ -14,7 +14,7 @@ draft: false
 
 | 章    | タイトル                                   | リンク                                                      |
 |-------|--------------------------------------------|-------------------------------------------------------------|
-| 第1章 | 環境構築                                   | [使用するツールのインストール](/ansible-handson-hugo/ansible-environment/)           |-
+| 第1章 | 環境構築                                   | [使用するツールのインストール](/ansible-handson-hugo/posts/ansible-environment/)           |-
 | 第2章 | テスト環境を構築する                       | [Dockerコンテナの起動](/ansible-handson-hugo/launchdocker/)                    |
 | 第3章 | Inventoryファイルを作る                    | [Inventoryファイル（`inventory.ini`）を作る](/ansible-handson-hugo/ansiblebasic/) |
 | 第4章 | Roleを作る                                 | [Roleのディレクトリ構造を作る](/ansible-handson-hugo/role/)                     |
