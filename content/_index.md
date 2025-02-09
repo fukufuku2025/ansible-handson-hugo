@@ -21,4 +21,4 @@ draft: false
 | 第5章 | Playbookを作る                             | [playbook.ymlを作る](/ansible-handson-hugo/playbook/)                           |
 | 第6章 | Playbookの実行                             | [Playbookを実行する](/ansible-handson-hugo/executerole/)                        |
 | 第7章 | Roleを更に作る                             | [Roleにテンプレートを追加](/ansible-handson-hugo/modifyrole/)                   |
-| 第8章 | Roleの実行                                 | [Roleを更新し、実行確認](/ansible-hands-on-hugo/executeplaybook/)                 |
+| 第8章 | Roleの実行                                 | [Roleを更新し、実行確認](/ansible-handson-hugo/executeplaybook/)                 |
