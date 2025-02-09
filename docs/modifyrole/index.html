@@ -4,22 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Ansible Environment | Ansible　ハンズオン</title>
+    <title>Modifyrole | Ansible　ハンズオン</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="開発環境のセットアップ
-この章では、開発に必要なツールをセットアップします。
-これらのツールを使用して、効率的に開発を進めるための準備を行います。
-ざっくり記載しているので、環境構築の詳細は AI などに聞いてください。
-
-1.1.1: Visual Studio Code (VSCode) のインストール
-Visual Studio Code（VSCode）は、軽量で強力なコードエディタです。
-以下の方法でインストールできます。
-Microsoft Storeからインストール
-# Microsoft StoreからVSCodeをインストール
-# Microsoft Storeを開き、「Visual Studio Code」を検索し、インストール
-$ docker -v
-Docker version 26.1.3, build 26.1.3-0ubuntu1~24.04.1
-">
+    <meta name="description" content="">
     <meta name="generator" content="Hugo 0.143.1">
     
     
@@ -49,36 +36,17 @@ Docker version 26.1.3, build 26.1.3-0ubuntu1~24.04.1
 
     <meta property="og:url" content="http://localhost:1313/ansible-handson-hugo/modifyrole/">
   <meta property="og:site_name" content="Ansible　ハンズオン">
-  <meta property="og:title" content="Ansible Environment">
-  <meta property="og:description" content="開発環境のセットアップ この章では、開発に必要なツールをセットアップします。
-これらのツールを使用して、効率的に開発を進めるための準備を行います。
-ざっくり記載しているので、環境構築の詳細は AI などに聞いてください。
-1.1.1: Visual Studio Code (VSCode) のインストール Visual Studio Code（VSCode）は、軽量で強力なコードエディタです。
-以下の方法でインストールできます。
-Microsoft Storeからインストール # Microsoft StoreからVSCodeをインストール # Microsoft Storeを開き、「Visual Studio Code」を検索し、インストール $ docker -v Docker version 26.1.3, build 26.1.3-0ubuntu1~24.04.1">
+  <meta property="og:title" content="Modifyrole">
   <meta property="og:locale" content="ja_jp">
   <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2023-02-08T12:00:00+00:00">
-    <meta property="article:modified_time" content="2023-02-08T12:00:00+00:00">
+    <meta property="article:published_time" content="2025-02-08T22:24:51+09:00">
+    <meta property="article:modified_time" content="2025-02-08T22:24:51+09:00">
 
-  <meta itemprop="name" content="Ansible Environment">
-  <meta itemprop="description" content="開発環境のセットアップ この章では、開発に必要なツールをセットアップします。
-これらのツールを使用して、効率的に開発を進めるための準備を行います。
-ざっくり記載しているので、環境構築の詳細は AI などに聞いてください。
-1.1.1: Visual Studio Code (VSCode) のインストール Visual Studio Code（VSCode）は、軽量で強力なコードエディタです。
-以下の方法でインストールできます。
-Microsoft Storeからインストール # Microsoft StoreからVSCodeをインストール # Microsoft Storeを開き、「Visual Studio Code」を検索し、インストール $ docker -v Docker version 26.1.3, build 26.1.3-0ubuntu1~24.04.1">
-  <meta itemprop="datePublished" content="2023-02-08T12:00:00+00:00">
-  <meta itemprop="dateModified" content="2023-02-08T12:00:00+00:00">
-  <meta itemprop="wordCount" content="34">
+  <meta itemprop="name" content="Modifyrole">
+  <meta itemprop="datePublished" content="2025-02-08T22:24:51+09:00">
+  <meta itemprop="dateModified" content="2025-02-08T22:24:51+09:00">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Ansible Environment">
-  <meta name="twitter:description" content="開発環境のセットアップ この章では、開発に必要なツールをセットアップします。
-これらのツールを使用して、効率的に開発を進めるための準備を行います。
-ざっくり記載しているので、環境構築の詳細は AI などに聞いてください。
-1.1.1: Visual Studio Code (VSCode) のインストール Visual Studio Code（VSCode）は、軽量で強力なコードエディタです。
-以下の方法でインストールできます。
-Microsoft Storeからインストール # Microsoft StoreからVSCodeをインストール # Microsoft Storeを開き、「Visual Studio Code」を検索し、インストール $ docker -v Docker version 26.1.3, build 26.1.3-0ubuntu1~24.04.1">
+  <meta name="twitter:title" content="Modifyrole">
 
 	
   </head><body class="ma0 avenir bg-near-white development">
@@ -114,24 +82,11 @@ Microsoft Storeからインストール # Microsoft StoreからVSCodeをイン�
     <article class="center cf pv5 ph3 ph4-ns mw7">
       <header>
         <h1 class="f1">
-          Ansible Environment
+          Modifyrole
         </h1>
       </header>
       <div class="nested-copy-line-height lh-copy f4 nested-links mid-gray">
-        <h1 id="開発環境のセットアップ">開発環境のセットアップ</h1>
-<p>この章では、開発に必要なツールをセットアップします。<br>
-これらのツールを使用して、効率的に開発を進めるための準備を行います。<br>
-ざっくり記載しているので、環境構築の詳細は <strong>AI</strong> などに聞いてください。</p>
-<hr>
-<h2 id="111-visual-studio-code-vscode-のインストール"><strong>1.1.1: Visual Studio Code (VSCode) のインストール</strong></h2>
-<p>Visual Studio Code（VSCode）は、軽量で強力なコードエディタです。<br>
-以下の方法でインストールできます。</p>
-<h3 id="microsoft-storeからインストール"><strong>Microsoft Storeからインストール</strong></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Microsoft StoreからVSCodeをインストール</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Microsoft Storeを開き、「Visual Studio Code」を検索し、インストール</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker -v
-</span></span><span style="display:flex;"><span>Docker version 26.1.3, build 26.1.3-0ubuntu1~24.04.1
-</span></span></code></pre></div>
+        
       </div>
     </article>
   </div>
