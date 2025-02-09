@@ -7,6 +7,7 @@ publishDate: 2023-02-08T12:00:00
 draft: false
 ---
 
+
 # Ansible ハンズオン デモ
 ## 目次
 
@@ -14,7 +15,7 @@ draft: false
 
 | 章    | タイトル                                   | リンク                                                      |
 |-------|--------------------------------------------|-------------------------------------------------------------|
-| 1  | 環境構築                                    | [使用するツールのインストール](/posts/ansible-environment/)           |-
+| 1  | 環境構築                                    | [使用するツールのインストール](/posts/ansible-environment/)          |
 | 2  | テスト環境を構築する                          | [Dockerコンテナの起動](/posts/launchdocker/)                    |
 | 3  | Inventoryファイルを作る                      | [Inventoryファイル（`inventory.ini`）を作る](/posts/ansiblebasic/) |
 | 4  | Roleを作る                                 | [Roleのディレクトリ構造を作る](/posts/role/)                     |

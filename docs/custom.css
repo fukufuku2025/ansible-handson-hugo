@@ -1,0 +1,19 @@
+/* テーブル全体を左詰め */
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  
+  /* ヘッダーのスタイル */
+  th {
+    text-align: left;
+    background-color: #f5f5f5;
+    padding: 8px;
+  }
+  
+  /* セルのスタイル */
+  td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
