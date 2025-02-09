@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ansible HandsOn on Ansible　ハンズオン</title>
-    <link>http://localhost:1313/ansible-handson-hugo/posts/</link>
+    <link>https://fukufuku2025.github.io/ansible-handson-hugo/posts/</link>
     <description>Recent content in Ansible HandsOn on Ansible　ハンズオン</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/ansible-handson-hugo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://fukufuku2025.github.io/ansible-handson-hugo/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

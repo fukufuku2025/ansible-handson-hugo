@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ansible HandsOn on Ansible　ハンズオン</title>
-    <link>http://localhost:1313/ansible-handson-hugo/</link>
+    <link>https://fukufuku2025.github.io/ansible-handson-hugo/</link>
     <description>Recent content in Ansible HandsOn on Ansible　ハンズオン</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 08 Feb 2025 22:25:02 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/ansible-handson-hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://fukufuku2025.github.io/ansible-handson-hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Playbook</title>
-      <link>http://localhost:1313/ansible-handson-hugo/playbook/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/playbook/</link>
       <pubDate>Sat, 08 Feb 2025 22:25:02 +0900</pubDate>
-      <guid>http://localhost:1313/ansible-handson-hugo/playbook/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/playbook/</guid>
       <description></description>
     </item>
     <item>
       <title>Role</title>
-      <link>http://localhost:1313/ansible-handson-hugo/role/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/role/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:57 +0900</pubDate>
-      <guid>http://localhost:1313/ansible-handson-hugo/role/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/role/</guid>
       <description></description>
     </item>
     <item>
       <title>Modifyrole</title>
-      <link>http://localhost:1313/ansible-handson-hugo/modifyrole/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/modifyrole/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:51 +0900</pubDate>
-      <guid>http://localhost:1313/ansible-handson-hugo/modifyrole/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/modifyrole/</guid>
       <description></description>
     </item>
     <item>
       <title>Launchdocker</title>
-      <link>http://localhost:1313/ansible-handson-hugo/launchdocker/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/launchdocker/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:43 +0900</pubDate>
-      <guid>http://localhost:1313/ansible-handson-hugo/launchdocker/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/launchdocker/</guid>
       <description></description>
     </item>
     <item>
       <title>Executerole</title>
-      <link>http://localhost:1313/ansible-handson-hugo/executerole/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/executerole/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:32 +0900</pubDate>
-      <guid>http://localhost:1313/ansible-handson-hugo/executerole/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/executerole/</guid>
       <description></description>
     </item>
     <item>
       <title>Executeplaybook</title>
-      <link>http://localhost:1313/ansible-handson-hugo/executeplaybook/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/executeplaybook/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:26 +0900</pubDate>
-      <guid>http://localhost:1313/ansible-handson-hugo/executeplaybook/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/executeplaybook/</guid>
       <description></description>
     </item>
     <item>
       <title>Ansiblebasic</title>
-      <link>http://localhost:1313/ansible-handson-hugo/ansiblebasic/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/ansiblebasic/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:17 +0900</pubDate>
-      <guid>http://localhost:1313/ansible-handson-hugo/ansiblebasic/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/ansiblebasic/</guid>
       <description></description>
     </item>
     <item>
       <title>Ansible Environment</title>
-      <link>http://localhost:1313/ansible-handson-hugo/ansible-environment/</link>
+      <link>https://fukufuku2025.github.io/ansible-handson-hugo/ansible-environment/</link>
       <pubDate>Sat, 08 Feb 2025 22:24:02 +0900</pubDate>
-      <guid>http://localhost:1313/ansible-handson-hugo/ansible-environment/</guid>
+      <guid>https://fukufuku2025.github.io/ansible-handson-hugo/ansible-environment/</guid>
       <description></description>
     </item>
   </channel>

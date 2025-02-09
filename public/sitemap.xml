@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/ansible-handson-hugo/playbook/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/playbook/</loc>
     <lastmod>2025-02-08T22:25:02+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/role/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/role/</loc>
     <lastmod>2025-02-08T22:24:57+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/modifyrole/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/modifyrole/</loc>
     <lastmod>2025-02-08T22:24:51+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/launchdocker/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/launchdocker/</loc>
     <lastmod>2025-02-08T22:24:43+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/executerole/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/executerole/</loc>
     <lastmod>2025-02-08T22:24:32+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/executeplaybook/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/executeplaybook/</loc>
     <lastmod>2025-02-08T22:24:26+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/ansiblebasic/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/ansiblebasic/</loc>
     <lastmod>2025-02-08T22:24:17+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/ansible-environment/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/ansible-environment/</loc>
     <lastmod>2025-02-08T22:24:02+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/</loc>
     <lastmod>2023-02-08T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/posts/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/posts/</loc>
     <lastmod>2023-02-08T12:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/categories/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/ansible-handson-hugo/tags/</loc>
+    <loc>https://fukufuku2025.github.io/ansible-handson-hugo/tags/</loc>
   </url>
 </urlset>
