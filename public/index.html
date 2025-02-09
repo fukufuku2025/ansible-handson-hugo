@@ -147,7 +147,7 @@
       <tr>
           <td>第8章</td>
           <td>Roleの実行</td>
-          <td><a href="/ansible-hands-on-hugo/executeplaybook/">Roleを更新し、実行確認</a></td>
+          <td><a href="/ansible-handson-hugo/executeplaybook/">Roleを更新し、実行確認</a></td>
       </tr>
   </tbody>
 </table>
@@ -191,7 +191,17 @@
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          
+          <p>プレイブックを使って、Ansibleで実行するタスクを記述します。この例では、<code>httpd</code>をインストールするタスクをroleで定義したのでそれを呼ぶように記載します。</p>
+<p>Playbookの作成</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy Apache Server</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">all</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">roles</span>:
+</span></span><span style="display:flex;"><span>　  - <span style="color:#ae81ff">httpd</span>
+</span></span></code></pre></div><p>このPlaybookは、<code>alll</code>ホスト（Dockerコンテナ）に対して<code>httpd</code>をインストールし、サービスを開始するタスクを実行します。</p>
+<p>ホスト間の疎通確認の実行方法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ansible all -i inventory.ini -m ping
+</span></span></code></pre></div>
         </div>
           <a href="/ansible-handson-hugo/playbook/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
@@ -215,7 +225,24 @@
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          
+          <p>Roleを使ってタスクを整理し、再利用可能な構造にします。まず、<code>httpd</code>を管理するRoleを作成します。</p>
+<p>本番環境とかでのディレクトリ構造</p>
+<pre tabindex="0"><code>roles/
+└── httpd/
+    ├── defaults/
+    │   └── main.yml
+    ├── tasks/
+    │   └── main.yml
+    ├── handlers/
+    │   └── main.yml
+    ├── templates/
+</code></pre><p>roles/httpd/tasks/main.yml の内容
+作成した <code>main.yml</code> に、Apache（httpd）のインストールと起動のタスクを記述します。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">installed my httpd</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">dnf</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">installed</span>
+</span></span></code></pre></div><p>これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。</p>
         </div>
           <a href="/ansible-handson-hugo/role/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
@@ -239,7 +266,32 @@
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          
+          <p>httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します</p>
+<p>ディレクトリ構成
+以下のような構成でファイルを配置します。</p>
+<pre tabindex="0"><code>ansible_project/
+├── ansible.cfg
+├── inventory.ini
+├── playbook.yml
+└── roles/
+    └── httpd/
+    　　├── defaults/
+    　　│   └── main.yml
+    　　├── handlers/
+    　　│   └── main.yml
+    　　├── meta/
+    　　│   └── main.yml
+    　　├── tasks/
+    　　│   └── main.yml
+    　　└── templates/
+    　　    └── httpd.conf.j2
+</code></pre><p>httpd roleにtemplateディレクトリを追加します
+Ansibleで管理するホストを指定するためのファイルを作成します。<code>inventory.ini</code>は、ホストの情報を記述するために使います。</p>
+<p>Inventoryファイルの作成</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>[<span style="color:#ae81ff">web_servers]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">web1 ansible_host=192.168.1.33</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">web2 ansible_host=192.168.1.34</span>
+</span></span></code></pre></div>
         </div>
           <a href="/ansible-handson-hugo/modifyrole/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         

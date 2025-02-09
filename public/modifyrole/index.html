@@ -6,7 +6,32 @@
     
     <title>Modifyrole | Ansible　ハンズオン</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します
+ディレクトリ構成
+以下のような構成でファイルを配置します。
+ansible_project/
+├── ansible.cfg
+├── inventory.ini
+├── playbook.yml
+└── roles/
+    └── httpd/
+    　　├── defaults/
+    　　│   └── main.yml
+    　　├── handlers/
+    　　│   └── main.yml
+    　　├── meta/
+    　　│   └── main.yml
+    　　├── tasks/
+    　　│   └── main.yml
+    　　└── templates/
+    　　    └── httpd.conf.j2
+httpd roleにtemplateディレクトリを追加します
+Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
+Inventoryファイルの作成
+[web_servers]
+web1 ansible_host=192.168.1.33
+web2 ansible_host=192.168.1.34
+">
     <meta name="generator" content="Hugo 0.143.1">
     
     
@@ -37,16 +62,32 @@
     <meta property="og:url" content="https://fukufuku2025.github.io/ansible-handson-hugo/modifyrole/">
   <meta property="og:site_name" content="Ansible　ハンズオン">
   <meta property="og:title" content="Modifyrole">
+  <meta property="og:description" content="httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します
+ディレクトリ構成 以下のような構成でファイルを配置します。
+ansible_project/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ ├── defaults/ │ └── main.yml ├── handlers/ │ └── main.yml ├── meta/ │ └── main.yml ├── tasks/ │ └── main.yml └── templates/ └── httpd.conf.j2 httpd roleにtemplateディレクトリを追加します Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
+Inventoryファイルの作成
+[web_servers] web1 ansible_host=192.168.1.33 web2 ansible_host=192.168.1.34">
   <meta property="og:locale" content="ja_jp">
   <meta property="og:type" content="article">
     <meta property="article:published_time" content="2025-02-08T22:24:51+09:00">
     <meta property="article:modified_time" content="2025-02-08T22:24:51+09:00">
 
   <meta itemprop="name" content="Modifyrole">
+  <meta itemprop="description" content="httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します
+ディレクトリ構成 以下のような構成でファイルを配置します。
+ansible_project/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ ├── defaults/ │ └── main.yml ├── handlers/ │ └── main.yml ├── meta/ │ └── main.yml ├── tasks/ │ └── main.yml └── templates/ └── httpd.conf.j2 httpd roleにtemplateディレクトリを追加します Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
+Inventoryファイルの作成
+[web_servers] web1 ansible_host=192.168.1.33 web2 ansible_host=192.168.1.34">
   <meta itemprop="datePublished" content="2025-02-08T22:24:51+09:00">
   <meta itemprop="dateModified" content="2025-02-08T22:24:51+09:00">
+  <meta itemprop="wordCount" content="48">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Modifyrole">
+  <meta name="twitter:description" content="httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します
+ディレクトリ構成 以下のような構成でファイルを配置します。
+ansible_project/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ ├── defaults/ │ └── main.yml ├── handlers/ │ └── main.yml ├── meta/ │ └── main.yml ├── tasks/ │ └── main.yml └── templates/ └── httpd.conf.j2 httpd roleにtemplateディレクトリを追加します Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
+Inventoryファイルの作成
+[web_servers] web1 ansible_host=192.168.1.33 web2 ansible_host=192.168.1.34">
 
       
     
@@ -88,7 +129,32 @@
         </h1>
       </header>
       <div class="nested-copy-line-height lh-copy f4 nested-links mid-gray">
-        
+        <p>httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します</p>
+<p>ディレクトリ構成
+以下のような構成でファイルを配置します。</p>
+<pre tabindex="0"><code>ansible_project/
+├── ansible.cfg
+├── inventory.ini
+├── playbook.yml
+└── roles/
+    └── httpd/
+    　　├── defaults/
+    　　│   └── main.yml
+    　　├── handlers/
+    　　│   └── main.yml
+    　　├── meta/
+    　　│   └── main.yml
+    　　├── tasks/
+    　　│   └── main.yml
+    　　└── templates/
+    　　    └── httpd.conf.j2
+</code></pre><p>httpd roleにtemplateディレクトリを追加します
+Ansibleで管理するホストを指定するためのファイルを作成します。<code>inventory.ini</code>は、ホストの情報を記述するために使います。</p>
+<p>Inventoryファイルの作成</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>[<span style="color:#ae81ff">web_servers]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">web1 ansible_host=192.168.1.33</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">web2 ansible_host=192.168.1.34</span>
+</span></span></code></pre></div>
       </div>
     </article>
   </div>
