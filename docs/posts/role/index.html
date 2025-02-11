@@ -21,12 +21,6 @@ main.yml
  dnf:
     name: httpd
     state: installed
-
-- name: Start and enable Apache
-  ansible.builtin.service:
-    name: httpd
-    state: started
-    enabled: yes
 これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
     <meta name="generator" content="Hugo 0.143.1">
     
@@ -62,7 +56,7 @@ main.yml
 ディレクトリ構造
 roles/ └── httpd/ ├── tasks/ │ └── main.yml ├── templates/ roles/httpd/tasks/main.yml の内容 作成した main.yml に、Apache（httpd）のインストールと起動のタスクを記述します。
 main.yml
-- name: installed my httpd dnf: name: httpd state: installed - name: Start and enable Apache ansible.builtin.service: name: httpd state: started enabled: yes これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
+- name: installed my httpd dnf: name: httpd state: installed これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
   <meta property="og:locale" content="ja_jp">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -74,17 +68,17 @@ main.yml
 ディレクトリ構造
 roles/ └── httpd/ ├── tasks/ │ └── main.yml ├── templates/ roles/httpd/tasks/main.yml の内容 作成した main.yml に、Apache（httpd）のインストールと起動のタスクを記述します。
 main.yml
-- name: installed my httpd dnf: name: httpd state: installed - name: Start and enable Apache ansible.builtin.service: name: httpd state: started enabled: yes これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
+- name: installed my httpd dnf: name: httpd state: installed これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
   <meta itemprop="datePublished" content="2025-02-08T22:24:57+09:00">
   <meta itemprop="dateModified" content="2025-02-08T22:24:57+09:00">
-  <meta itemprop="wordCount" content="44">
+  <meta itemprop="wordCount" content="31">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Role">
   <meta name="twitter:description" content="4.1 Roleの作成 Roleを使ってタスクを整理し、再利用可能な構造にします。まず、httpdを管理するRoleを作成します。
 ディレクトリ構造
 roles/ └── httpd/ ├── tasks/ │ └── main.yml ├── templates/ roles/httpd/tasks/main.yml の内容 作成した main.yml に、Apache（httpd）のインストールと起動のタスクを記述します。
 main.yml
-- name: installed my httpd dnf: name: httpd state: installed - name: Start and enable Apache ansible.builtin.service: name: httpd state: started enabled: yes これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
+- name: installed my httpd dnf: name: httpd state: installed これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。">
 
       
     
@@ -153,12 +147,6 @@ main.yml
 </span></span><span style="display:flex;"><span> <span style="color:#f92672">dnf</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">installed</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Start and enable Apache</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ansible.builtin.service</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">started</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">yes</span>
 </span></span></code></pre></div><p>これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。</p>
 <ul class="pa0">
   
