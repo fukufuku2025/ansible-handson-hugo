@@ -28,14 +28,16 @@ Dockerを使用してコンテナを簡単に構築・管理できます。
 
 ```bash
 $ docker -v
-Docker version 26.1.3, build 26.1.3-0ubuntu1~24.04.1 
+Docker version 27.4.0, build bde2b89
 ```
         
 # 1.3: git リポジトリのクローン
 git clone でリポジトリをalpien Linuxの中にクローンする
-
-WSL2のalpine linuxの中でリポジトリをクローンするには下記のコマンドを実行します
+リポジトリをクローンするには下記のコマンドを実行します
 
 ```bash
 $ git clone https://github.com/fukufuku2025/ansible-hands-on.git
+$ cd ansible-hands-on
 ```
+
+クローンしたリポジトリには検証環境を構築するdocker-compose.ymlファイルが含まれています

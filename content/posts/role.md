@@ -4,18 +4,15 @@ draft = false
 title = 'Role'
 +++
 
+## 4.1 Roleの作成
 Roleを使ってタスクを整理し、再利用可能な構造にします。まず、`httpd`を管理するRoleを作成します。
 
-本番環境とかでのディレクトリ構造
+ディレクトリ構造
 
 ```
 roles/
 └── httpd/
-    ├── defaults/
-    │   └── main.yml
     ├── tasks/
-    │   └── main.yml
-    ├── handlers/
     │   └── main.yml
     ├── templates/
 ```
@@ -23,11 +20,18 @@ roles/
 roles/httpd/tasks/main.yml の内容
 作成した `main.yml` に、Apache（httpd）のインストールと起動のタスクを記述します。
 
+**`main.yml`**
 ```yaml
 - name: installed my httpd
  dnf:
     name: httpd
     state: installed
+
+- name: Start and enable Apache
+  ansible.builtin.service:
+    name: httpd
+    state: started
+    enabled: yes
 ```
         
 これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。

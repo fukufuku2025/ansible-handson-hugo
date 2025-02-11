@@ -18,10 +18,3 @@ Playbookの作成
           
         
 このPlaybookは、`alll`ホスト（Dockerコンテナ）に対して`httpd`をインストールし、サービスを開始するタスクを実行します。
-
-ホスト間の疎通確認の実行方法
-
-```bash
-$ ansible all -i inventory.ini -m ping
-```
-        
