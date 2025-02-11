@@ -26,12 +26,6 @@ roles/httpd/tasks/main.yml の内容
  dnf:
     name: httpd
     state: installed
-
-- name: Start and enable Apache
-  ansible.builtin.service:
-    name: httpd
-    state: started
-    enabled: yes
 ```
         
 これにより、dnfを使ってApacheがインストールされ、httpdパッケージをインストールせよという状態になります。
