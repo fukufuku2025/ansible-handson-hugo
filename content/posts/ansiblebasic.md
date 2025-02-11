@@ -4,21 +4,25 @@ draft = false
 title = 'Ansiblebasic'
 +++
 
-Ansibleで管理するホストを指定するためのファイルを作成します。`inventory.ini`は、ホストの情報を記述するために使います。
+# 2.1: インベントリファイル　invetory.ini を作成
+Ansibleで管理するホストを指定するためのファイルを作成します。
+`inventory.ini`は、変更対象のホストの情報を記述するために使います。
 
-Inventoryファイルの作成
+テスト環境で使用するインベントリファイルの作成
 
 ```yaml
-[web_servers]
-web1 ansible_host=192.168.1.33
-web2 ansible_host=192.168.1.34
+[linux_servers]
+web1 ansible_host=192.168.1.10
+web2 ansible_host=192.168.1.11
 ```
 
         
 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
 
 ディレクトリ構成
+
 以下のような構成でファイルを配置します。
+git リポジトリをクローンしてきた場合は既に下記のような構成でディレクトリとファイルが配置されています。
 
 ```
 ansible_project/

@@ -6,14 +6,17 @@
     
     <title>Ansiblebasic | Ansible　ハンズオン</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
-Inventoryファイルの作成
-[web_servers]
-web1 ansible_host=192.168.1.33
-web2 ansible_host=192.168.1.34
+    <meta name="description" content="2.1: インベントリファイル　invetory.ini を作成
+Ansibleで管理するホストを指定するためのファイルを作成します。
+inventory.iniは、変更対象のホストの情報を記述するために使います。
+テスト環境で使用するインベントリファイルの作成
+[linux_servers]
+web1 ansible_host=192.168.1.10
+web2 ansible_host=192.168.1.11
 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
 ディレクトリ構成
 以下のような構成でファイルを配置します。
+git リポジトリをクローンしてきた場合は既に下記のような構成でディレクトリとファイルが配置されています。
 ansible_project/
 ├── ansible.cfg
 ├── inventory.ini
@@ -57,10 +60,11 @@ roles/httpd/tasks/main.yml - HTTPD（Apache）をインストール・設定す�
     <meta property="og:url" content="https://fukufuku2025.github.io/ansible-handson-hugo/posts/ansiblebasic/">
   <meta property="og:site_name" content="Ansible　ハンズオン">
   <meta property="og:title" content="Ansiblebasic">
-  <meta property="og:description" content="Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
-Inventoryファイルの作成
-[web_servers] web1 ansible_host=192.168.1.33 web2 ansible_host=192.168.1.34 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
-ディレクトリ構成 以下のような構成でファイルを配置します。
+  <meta property="og:description" content="2.1: インベントリファイル　invetory.ini を作成 Ansibleで管理するホストを指定するためのファイルを作成します。 inventory.iniは、変更対象のホストの情報を記述するために使います。
+テスト環境で使用するインベントリファイルの作成
+[linux_servers] web1 ansible_host=192.168.1.10 web2 ansible_host=192.168.1.11 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
+ディレクトリ構成
+以下のような構成でファイルを配置します。 git リポジトリをクローンしてきた場合は既に下記のような構成でディレクトリとファイルが配置されています。
 ansible_project/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ └── tasks/ └── main.yml 各ファイルの役割 ansible.cfg - Ansibleの設定ファイル inventory.ini - 管理対象ホストのリスト playbook.yml - 自動化タスクを定義 roles/httpd/tasks/main.yml - HTTPD（Apache）をインストール・設定するタスク">
   <meta property="og:locale" content="ja_jp">
   <meta property="og:type" content="article">
@@ -69,20 +73,22 @@ ansible_project/ ├── ansible.cfg ├── inventory.ini ├── playboo
     <meta property="article:modified_time" content="2025-02-08T22:24:17+09:00">
 
   <meta itemprop="name" content="Ansiblebasic">
-  <meta itemprop="description" content="Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
-Inventoryファイルの作成
-[web_servers] web1 ansible_host=192.168.1.33 web2 ansible_host=192.168.1.34 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
-ディレクトリ構成 以下のような構成でファイルを配置します。
+  <meta itemprop="description" content="2.1: インベントリファイル　invetory.ini を作成 Ansibleで管理するホストを指定するためのファイルを作成します。 inventory.iniは、変更対象のホストの情報を記述するために使います。
+テスト環境で使用するインベントリファイルの作成
+[linux_servers] web1 ansible_host=192.168.1.10 web2 ansible_host=192.168.1.11 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
+ディレクトリ構成
+以下のような構成でファイルを配置します。 git リポジトリをクローンしてきた場合は既に下記のような構成でディレクトリとファイルが配置されています。
 ansible_project/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ └── tasks/ └── main.yml 各ファイルの役割 ansible.cfg - Ansibleの設定ファイル inventory.ini - 管理対象ホストのリスト playbook.yml - 自動化タスクを定義 roles/httpd/tasks/main.yml - HTTPD（Apache）をインストール・設定するタスク">
   <meta itemprop="datePublished" content="2025-02-08T22:24:17+09:00">
   <meta itemprop="dateModified" content="2025-02-08T22:24:17+09:00">
-  <meta itemprop="wordCount" content="38">
+  <meta itemprop="wordCount" content="45">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Ansiblebasic">
-  <meta name="twitter:description" content="Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
-Inventoryファイルの作成
-[web_servers] web1 ansible_host=192.168.1.33 web2 ansible_host=192.168.1.34 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
-ディレクトリ構成 以下のような構成でファイルを配置します。
+  <meta name="twitter:description" content="2.1: インベントリファイル　invetory.ini を作成 Ansibleで管理するホストを指定するためのファイルを作成します。 inventory.iniは、変更対象のホストの情報を記述するために使います。
+テスト環境で使用するインベントリファイルの作成
+[linux_servers] web1 ansible_host=192.168.1.10 web2 ansible_host=192.168.1.11 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
+ディレクトリ構成
+以下のような構成でファイルを配置します。 git リポジトリをクローンしてきた場合は既に下記のような構成でディレクトリとファイルが配置されています。
 ansible_project/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ └── tasks/ └── main.yml 各ファイルの役割 ansible.cfg - Ansibleの設定ファイル inventory.ini - 管理対象ホストのリスト playbook.yml - 自動化タスクを定義 roles/httpd/tasks/main.yml - HTTPD（Apache）をインストール・設定するタスク">
 
       
@@ -137,14 +143,17 @@ ansible_project/ ├── ansible.cfg ├── inventory.ini ├── playboo
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Ansibleで管理するホストを指定するためのファイルを作成します。<code>inventory.ini</code>は、ホストの情報を記述するために使います。</p>
-<p>Inventoryファイルの作成</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>[<span style="color:#ae81ff">web_servers]</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">web1 ansible_host=192.168.1.33</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">web2 ansible_host=192.168.1.34</span>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="21-インベントリファイルinvetoryini-を作成">2.1: インベントリファイル　invetory.ini を作成</h1>
+<p>Ansibleで管理するホストを指定するためのファイルを作成します。
+<code>inventory.ini</code>は、変更対象のホストの情報を記述するために使います。</p>
+<p>テスト環境で使用するインベントリファイルの作成</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>[<span style="color:#ae81ff">linux_servers]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">web1 ansible_host=192.168.1.10</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">web2 ansible_host=192.168.1.11</span>
 </span></span></code></pre></div><p>このファイルにより、AnsibleがDockerコンテナに接続できるようになります。</p>
-<p>ディレクトリ構成
-以下のような構成でファイルを配置します。</p>
+<p>ディレクトリ構成</p>
+<p>以下のような構成でファイルを配置します。
+git リポジトリをクローンしてきた場合は既に下記のような構成でディレクトリとファイルが配置されています。</p>
 <pre tabindex="0"><code>ansible_project/
 ├── ansible.cfg
 ├── inventory.ini
