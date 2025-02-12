@@ -79,7 +79,7 @@ $ docker exec -it dev-ansible /bin/bash [root@ccf3d9c92518 /]# su - ansible [ans
 [ansible@ccf3d9c92518 study]$ ansible-playbook -i inventory.ini playbook.yml [WARNING]: log file at /home/ansible/ansible_projects/ansible.log is not writeable and we cannot create it, aborting PLAY [Deploy Apache Server] ************************************************************************************************************************************************************************************************************************************************ TASK [Gathering Facts] ***************************************************************************************************************************************************************************************************************************************************** ok: [svx02] ok: [svx01] TASK [httpd : Install Apache] ********************************************************************************************************************************************************************************************************************************************** ok: [svx02] ok: [svx01] TASK [ensure may httpd config] ********************************************************************************************************************************************************************************************************************************************* changed: [svx02] changed: [svx01] PLAY RECAP ***************************************************************************************************************************************************************************************************************************************************************** svx01 : ok=3 changed=1 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0 svx02 : ok=3 changed=1 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0 テンプレートの配布を確認します。">
   <meta itemprop="datePublished" content="2025-02-08T22:24:26+09:00">
   <meta itemprop="dateModified" content="2025-02-08T22:24:26+09:00">
-  <meta itemprop="wordCount" content="371">
+  <meta itemprop="wordCount" content="409">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Executeplaybook">
   <meta name="twitter:description" content="Roleを更新し実行します。
@@ -285,7 +285,31 @@ $ docker exec -it dev-ansible /bin/bash [root@ccf3d9c92518 /]# su - ansible [ans
 </span></span><span style="display:flex;"><span>logout
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>root@ccf3d9c92518 /<span style="color:#f92672">]</span><span style="color:#75715e"># exit</span>
 </span></span><span style="display:flex;"><span>exit
-</span></span></code></pre></div><ul class="pa0">
+</span></span></code></pre></div><h2 id="本番環境で実際に使う構成とroleの追加など補足情報">本番環境で実際に使う構成とRoleの追加など、補足情報</h2>
+<p>Roleの作り方の基礎については以上ですが下記のようなディレクトリ構成で
+defaults にロールが使用するデフォルトの変数帝後を記載して
+templatesのファイル内での値を変数と置換したり
+タスクの実行結果を条件づけして実行するhandlersを定義したり
+templates だけでなくfilesに配布ファイルを置いたりと派生はまだまだあります。</p>
+<p>Roleの数もhttpdだけではなく基本的にsshd,locale,timezone,mysqlなど、、、
+ミドルウェアの数分gitリポジトリ上で管理されているのが通常の構成だと思います。
+この通常使用するroleのディレクトリ構成もプロジェクトのスターターキットとしてテンプレート化されています。</p>
+<pre tabindex="0"><code>study/
+├── ansible.cfg
+├── inventory.ini
+├── playbook.yml
+└── roles/
+    └── httpd/
+        └── tasks/
+            └── main.yml
+        ├── templates
+        ├── defaults
+            └── main.yml
+        ├── handlers
+            └── main.yml
+        ├── files
+      
+</code></pre><ul class="pa0">
   
 </ul>
 <div class="mt6 instapaper_ignoref">

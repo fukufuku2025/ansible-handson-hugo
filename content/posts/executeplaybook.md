@@ -169,3 +169,35 @@ logout
 [root@ccf3d9c92518 /]# exit
 exit
 ```
+
+
+
+## 本番環境で実際に使う構成とRoleの追加など、補足情報
+
+Roleの作り方の基礎については以上ですが下記のようなディレクトリ構成で
+defaults にロールが使用するデフォルトの変数帝後を記載して
+templatesのファイル内での値を変数と置換したり
+タスクの実行結果を条件づけして実行するhandlersを定義したり
+templates だけでなくfilesに配布ファイルを置いたりと派生はまだまだあります。
+
+Roleの数もhttpdだけではなく基本的にsshd,locale,timezone,mysqlなど、、、
+ミドルウェアの数分gitリポジトリ上で管理されているのが通常の構成だと思います。
+この通常使用するroleのディレクトリ構成もプロジェクトのスターターキットとしてテンプレート化されています。
+
+
+```
+study/
+├── ansible.cfg
+├── inventory.ini
+├── playbook.yml
+└── roles/
+    └── httpd/
+        └── tasks/
+            └── main.yml
+        ├── templates
+        ├── defaults
+            └── main.yml
+        ├── handlers
+            └── main.yml
+        ├── files
+      

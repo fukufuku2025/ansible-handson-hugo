@@ -25,7 +25,7 @@ roleのタスク定義にテンプレートファイルから設定ファイル�
 
 
 ## 6.2 Templateファイルの配置
-httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します
+httpd roleにtemplatesディレクトリを追加し、httpd.conf.j2を作成します
 
 ディレクトリ構成
 以下のような構成でファイルを配置します。
@@ -52,6 +52,8 @@ $ docker container cp ../study/ dev-ansible:/home/ansible/
 ```
 
 httpd.conf.j2の実態はApacheのconfファイルです。
+
+**`httpd.conf.j2`**
 ```conf
 # Apache HTTP Server Configuration Template
 

@@ -15,6 +15,7 @@ vi inventory.ini
 
 テスト環境で使用するインベントリファイルの作成
 
+**`inventory.ini`**
 ```yaml
 [linux_servers]
 svx01 ansible_host=192.168.18.10

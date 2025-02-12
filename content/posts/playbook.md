@@ -8,6 +8,7 @@ title = 'Playbook'
 
 Playbookの作成
 
+**`playbook.yml`**
 ```yaml
 - name: Deploy Apache Server
   hosts: all

@@ -19,7 +19,7 @@ main.yml
     src: httpd.conf.j2
     dest: /etc/httpd/conf/httpd.conf
 6.2 Templateファイルの配置
-httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します
+httpd roleにtemplatesディレクトリを追加し、httpd.conf.j2を作成します
 ディレクトリ構成
 以下のような構成でファイルを配置します。
 study/
@@ -37,6 +37,7 @@ Ansibleで管理するホストを指定するためのファイルを作成し�
 再度コンテナにroleのmain.ymlとhttd.conf.j2を含むディレクトリをコピーしておきます。
 $ docker container cp ../study/ dev-ansible:/home/ansible/
 httpd.conf.j2の実態はApacheのconfファイルです。
+httpd.conf.j2
 # Apache HTTP Server Configuration Template
 
 ServerRoot &#34;/etc/httpd&#34;
@@ -122,11 +123,12 @@ KeepAliveTimeout 5
   <meta property="og:title" content="Modifyrole">
   <meta property="og:description" content="6.1 roleのタスクの追記 roleのタスク定義にテンプレートファイルから設定ファイルを配布するタスクを追記します。
 main.yml
-- name: installed my httpd dnf: name: httpd state: installed - name: ensure may httpd config template: src: httpd.conf.j2 dest: /etc/httpd/conf/httpd.conf 6.2 Templateファイルの配置 httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します
+- name: installed my httpd dnf: name: httpd state: installed - name: ensure may httpd config template: src: httpd.conf.j2 dest: /etc/httpd/conf/httpd.conf 6.2 Templateファイルの配置 httpd roleにtemplatesディレクトリを追加し、httpd.conf.j2を作成します
 ディレクトリ構成 以下のような構成でファイルを配置します。
 study/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ ├── tasks/ │ └── main.yml └── templates/ └── httpd.conf.j2 httpd roleにtemplateディレクトリを追加します Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
 再度コンテナにroleのmain.ymlとhttd.conf.j2を含むディレクトリをコピーしておきます。
 $ docker container cp ../study/ dev-ansible:/home/ansible/ httpd.conf.j2の実態はApacheのconfファイルです。
+httpd.conf.j2
 # Apache HTTP Server Configuration Template ServerRoot &#34;/etc/httpd&#34; Listen 80 # ServerName を変数で動的に指定 {% if server_name is defined %} ServerName {{ server_name }} {% else %} ServerName localhost {% endif %} # ドキュメントルートを変数で指定 DocumentRoot &#34;{{ document_root | default(&#39;/var/www/html&#39;) }}&#34; &lt;Directory &#34;{{ document_root | default(&#39;/var/www/html&#39;) }}&#34;&gt; AllowOverride None Require all granted &lt;/Directory&gt; # ログの設定 ErrorLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/error.log&#34; CustomLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/access.log&#34; combined # MIME タイプ設定 TypesConfig /etc/mime.types # モジュールの読み込み LoadModule dir_module modules/mod_dir.so LoadModule mime_module modules/mod_mime.so LoadModule log_config_module modules/mod_log_config.so # デフォルトのインデックスページ &lt;IfModule dir_module&gt; DirectoryIndex index.html index.php &lt;/IfModule&gt; # KeepAlive 設定 KeepAlive On MaxKeepAliveRequests 100 KeepAliveTimeout 5 # 仮想ホストの設定 &lt;VirtualHost *:80&gt; ServerAdmin {{ admin_email | default(&#39;webmaster@localhost&#39;) }} DocumentRoot &#34;{{ document_root | default(&#39;/var/www/html&#39;) }}&#34; ServerName {{ server_name | default(&#39;localhost&#39;) }} ErrorLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/error.log&#34; CustomLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/access.log&#34; combined &lt;/VirtualHost&gt;">
   <meta property="og:locale" content="ja_jp">
   <meta property="og:type" content="article">
@@ -137,24 +139,26 @@ $ docker container cp ../study/ dev-ansible:/home/ansible/ httpd.conf.j2の実�
   <meta itemprop="name" content="Modifyrole">
   <meta itemprop="description" content="6.1 roleのタスクの追記 roleのタスク定義にテンプレートファイルから設定ファイルを配布するタスクを追記します。
 main.yml
-- name: installed my httpd dnf: name: httpd state: installed - name: ensure may httpd config template: src: httpd.conf.j2 dest: /etc/httpd/conf/httpd.conf 6.2 Templateファイルの配置 httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します
+- name: installed my httpd dnf: name: httpd state: installed - name: ensure may httpd config template: src: httpd.conf.j2 dest: /etc/httpd/conf/httpd.conf 6.2 Templateファイルの配置 httpd roleにtemplatesディレクトリを追加し、httpd.conf.j2を作成します
 ディレクトリ構成 以下のような構成でファイルを配置します。
 study/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ ├── tasks/ │ └── main.yml └── templates/ └── httpd.conf.j2 httpd roleにtemplateディレクトリを追加します Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
 再度コンテナにroleのmain.ymlとhttd.conf.j2を含むディレクトリをコピーしておきます。
 $ docker container cp ../study/ dev-ansible:/home/ansible/ httpd.conf.j2の実態はApacheのconfファイルです。
+httpd.conf.j2
 # Apache HTTP Server Configuration Template ServerRoot &#34;/etc/httpd&#34; Listen 80 # ServerName を変数で動的に指定 {% if server_name is defined %} ServerName {{ server_name }} {% else %} ServerName localhost {% endif %} # ドキュメントルートを変数で指定 DocumentRoot &#34;{{ document_root | default(&#39;/var/www/html&#39;) }}&#34; &lt;Directory &#34;{{ document_root | default(&#39;/var/www/html&#39;) }}&#34;&gt; AllowOverride None Require all granted &lt;/Directory&gt; # ログの設定 ErrorLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/error.log&#34; CustomLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/access.log&#34; combined # MIME タイプ設定 TypesConfig /etc/mime.types # モジュールの読み込み LoadModule dir_module modules/mod_dir.so LoadModule mime_module modules/mod_mime.so LoadModule log_config_module modules/mod_log_config.so # デフォルトのインデックスページ &lt;IfModule dir_module&gt; DirectoryIndex index.html index.php &lt;/IfModule&gt; # KeepAlive 設定 KeepAlive On MaxKeepAliveRequests 100 KeepAliveTimeout 5 # 仮想ホストの設定 &lt;VirtualHost *:80&gt; ServerAdmin {{ admin_email | default(&#39;webmaster@localhost&#39;) }} DocumentRoot &#34;{{ document_root | default(&#39;/var/www/html&#39;) }}&#34; ServerName {{ server_name | default(&#39;localhost&#39;) }} ErrorLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/error.log&#34; CustomLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/access.log&#34; combined &lt;/VirtualHost&gt;">
   <meta itemprop="datePublished" content="2025-02-08T22:24:51+09:00">
   <meta itemprop="dateModified" content="2025-02-08T22:24:51+09:00">
-  <meta itemprop="wordCount" content="197">
+  <meta itemprop="wordCount" content="198">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Modifyrole">
   <meta name="twitter:description" content="6.1 roleのタスクの追記 roleのタスク定義にテンプレートファイルから設定ファイルを配布するタスクを追記します。
 main.yml
-- name: installed my httpd dnf: name: httpd state: installed - name: ensure may httpd config template: src: httpd.conf.j2 dest: /etc/httpd/conf/httpd.conf 6.2 Templateファイルの配置 httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します
+- name: installed my httpd dnf: name: httpd state: installed - name: ensure may httpd config template: src: httpd.conf.j2 dest: /etc/httpd/conf/httpd.conf 6.2 Templateファイルの配置 httpd roleにtemplatesディレクトリを追加し、httpd.conf.j2を作成します
 ディレクトリ構成 以下のような構成でファイルを配置します。
 study/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ ├── tasks/ │ └── main.yml └── templates/ └── httpd.conf.j2 httpd roleにtemplateディレクトリを追加します Ansibleで管理するホストを指定するためのファイルを作成します。inventory.iniは、ホストの情報を記述するために使います。
 再度コンテナにroleのmain.ymlとhttd.conf.j2を含むディレクトリをコピーしておきます。
 $ docker container cp ../study/ dev-ansible:/home/ansible/ httpd.conf.j2の実態はApacheのconfファイルです。
+httpd.conf.j2
 # Apache HTTP Server Configuration Template ServerRoot &#34;/etc/httpd&#34; Listen 80 # ServerName を変数で動的に指定 {% if server_name is defined %} ServerName {{ server_name }} {% else %} ServerName localhost {% endif %} # ドキュメントルートを変数で指定 DocumentRoot &#34;{{ document_root | default(&#39;/var/www/html&#39;) }}&#34; &lt;Directory &#34;{{ document_root | default(&#39;/var/www/html&#39;) }}&#34;&gt; AllowOverride None Require all granted &lt;/Directory&gt; # ログの設定 ErrorLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/error.log&#34; CustomLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/access.log&#34; combined # MIME タイプ設定 TypesConfig /etc/mime.types # モジュールの読み込み LoadModule dir_module modules/mod_dir.so LoadModule mime_module modules/mod_mime.so LoadModule log_config_module modules/mod_log_config.so # デフォルトのインデックスページ &lt;IfModule dir_module&gt; DirectoryIndex index.html index.php &lt;/IfModule&gt; # KeepAlive 設定 KeepAlive On MaxKeepAliveRequests 100 KeepAliveTimeout 5 # 仮想ホストの設定 &lt;VirtualHost *:80&gt; ServerAdmin {{ admin_email | default(&#39;webmaster@localhost&#39;) }} DocumentRoot &#34;{{ document_root | default(&#39;/var/www/html&#39;) }}&#34; ServerName {{ server_name | default(&#39;localhost&#39;) }} ErrorLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/error.log&#34; CustomLog &#34;{{ log_dir | default(&#39;/var/log/httpd&#39;) }}/access.log&#34; combined &lt;/VirtualHost&gt;">
 
       
@@ -222,7 +226,7 @@ $ docker container cp ../study/ dev-ansible:/home/ansible/ httpd.conf.j2の実�
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">src</span>: <span style="color:#ae81ff">httpd.conf.j2</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">dest</span>: <span style="color:#ae81ff">/etc/httpd/conf/httpd.conf</span>
 </span></span></code></pre></div><h2 id="62-templateファイルの配置">6.2 Templateファイルの配置</h2>
-<p>httpd roleにtemplateディレクトリを追加し、httpd.conf.j2を作成します</p>
+<p>httpd roleにtemplatesディレクトリを追加し、httpd.conf.j2を作成します</p>
 <p>ディレクトリ構成
 以下のような構成でファイルを配置します。</p>
 <pre tabindex="0"><code>study/
@@ -240,6 +244,7 @@ Ansibleで管理するホストを指定するためのファイルを作成し�
 <p>再度コンテナにroleのmain.ymlとhttd.conf.j2を含むディレクトリをコピーしておきます。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker container cp ../study/ dev-ansible:/home/ansible/
 </span></span></code></pre></div><p>httpd.conf.j2の実態はApacheのconfファイルです。</p>
+<p><strong><code>httpd.conf.j2</code></strong></p>
 <pre tabindex="0"><code class="language-conf" data-lang="conf"># Apache HTTP Server Configuration Template
 
 ServerRoot &#34;/etc/httpd&#34;

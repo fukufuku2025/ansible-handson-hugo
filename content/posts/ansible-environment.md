@@ -23,8 +23,16 @@ https://code.visualstudio.com/
 からインストーラーをダウンロードし、インストール
             
 # 1.2: Dockerのインストール  
-Dockerを使用してコンテナを簡単に構築・管理できます。  
-今回は下記のバージョンを使用します。 
+Dockerを使用してコンテナを簡単に構築・管理できます。 
+Linuxの格ディストリビューションでのインストール方法は下記の公式ドキュメントを参照のこと 
+https://docs.docker.com/engine/install/
+
+WindowsやMacではDocker for Windows
+Docer for Macで動かせます。
+https://docs.docker.jp/docker-for-windows/install.html
+https://docs.docker.jp/docker-for-mac/toc.html
+今回はMacOSの環境で下記のバージョンを使用します。 
+(WSL2のLinuxでも検証環境は立ち上げ出来たので動く筈)
 
 ```bash
 $ docker -v
