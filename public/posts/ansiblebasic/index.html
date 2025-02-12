@@ -17,14 +17,14 @@ inventory.ini
 svx01 ansible_host=192.168.18.10
 svx02 ansible_host=192.168.18.11
 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
-3.2 ansible.cfg ファイルを作成・配置
+3.2: ansible.cfg ファイルを作成・配置
 下記のようにインベントリファイルのパスとロールのパスを記載しておきます。
 [defaults]
 inventory= ./inventory.ini
 roles_path= ./study/roles
 host_key_checking = False
 log_path = ~/study/ansible.log
-3.3 ディレクトリ構成とファイルの役割の再確認
+3.3: ディレクトリ構成とファイルの役割の再確認
 以下のような構成でファイルを配置します。
 ※git リポジトリをクローンしてきた場合は既に下記のような構成含んだディレクトリとファイルが配置されています。
 study/
@@ -74,8 +74,8 @@ roles/httpd/tasks/main.yml - HTTPD（Apache）をインストール・設定す�
 cd study vi inventory.ini テスト環境で使用するインベントリファイルの作成
 inventory.ini
 [linux_servers] svx01 ansible_host=192.168.18.10 svx02 ansible_host=192.168.18.11 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
-3.2 ansible.cfg ファイルを作成・配置 下記のようにインベントリファイルのパスとロールのパスを記載しておきます。
-[defaults] inventory= ./inventory.ini roles_path= ./study/roles host_key_checking = False log_path = ~/study/ansible.log 3.3 ディレクトリ構成とファイルの役割の再確認 以下のような構成でファイルを配置します。 ※git リポジトリをクローンしてきた場合は既に下記のような構成含んだディレクトリとファイルが配置されています。
+3.2: ansible.cfg ファイルを作成・配置 下記のようにインベントリファイルのパスとロールのパスを記載しておきます。
+[defaults] inventory= ./inventory.ini roles_path= ./study/roles host_key_checking = False log_path = ~/study/ansible.log 3.3: ディレクトリ構成とファイルの役割の再確認 以下のような構成でファイルを配置します。 ※git リポジトリをクローンしてきた場合は既に下記のような構成含んだディレクトリとファイルが配置されています。
 study/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ └── tasks/ └── main.yml 各ファイルの役割 ansible.cfg - Ansibleの設定ファイル inventory.ini - 管理対象ホストのリスト playbook.yml - 自動化タスクを定義 roles/httpd/tasks/main.yml - HTTPD（Apache）をインストール・設定するタスク">
   <meta property="og:locale" content="ja_jp">
   <meta property="og:type" content="article">
@@ -88,8 +88,8 @@ study/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └�
 cd study vi inventory.ini テスト環境で使用するインベントリファイルの作成
 inventory.ini
 [linux_servers] svx01 ansible_host=192.168.18.10 svx02 ansible_host=192.168.18.11 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
-3.2 ansible.cfg ファイルを作成・配置 下記のようにインベントリファイルのパスとロールのパスを記載しておきます。
-[defaults] inventory= ./inventory.ini roles_path= ./study/roles host_key_checking = False log_path = ~/study/ansible.log 3.3 ディレクトリ構成とファイルの役割の再確認 以下のような構成でファイルを配置します。 ※git リポジトリをクローンしてきた場合は既に下記のような構成含んだディレクトリとファイルが配置されています。
+3.2: ansible.cfg ファイルを作成・配置 下記のようにインベントリファイルのパスとロールのパスを記載しておきます。
+[defaults] inventory= ./inventory.ini roles_path= ./study/roles host_key_checking = False log_path = ~/study/ansible.log 3.3: ディレクトリ構成とファイルの役割の再確認 以下のような構成でファイルを配置します。 ※git リポジトリをクローンしてきた場合は既に下記のような構成含んだディレクトリとファイルが配置されています。
 study/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ └── tasks/ └── main.yml 各ファイルの役割 ansible.cfg - Ansibleの設定ファイル inventory.ini - 管理対象ホストのリスト playbook.yml - 自動化タスクを定義 roles/httpd/tasks/main.yml - HTTPD（Apache）をインストール・設定するタスク">
   <meta itemprop="datePublished" content="2025-02-08T22:24:17+09:00">
   <meta itemprop="dateModified" content="2025-02-08T22:24:17+09:00">
@@ -100,8 +100,8 @@ study/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └�
 cd study vi inventory.ini テスト環境で使用するインベントリファイルの作成
 inventory.ini
 [linux_servers] svx01 ansible_host=192.168.18.10 svx02 ansible_host=192.168.18.11 このファイルにより、AnsibleがDockerコンテナに接続できるようになります。
-3.2 ansible.cfg ファイルを作成・配置 下記のようにインベントリファイルのパスとロールのパスを記載しておきます。
-[defaults] inventory= ./inventory.ini roles_path= ./study/roles host_key_checking = False log_path = ~/study/ansible.log 3.3 ディレクトリ構成とファイルの役割の再確認 以下のような構成でファイルを配置します。 ※git リポジトリをクローンしてきた場合は既に下記のような構成含んだディレクトリとファイルが配置されています。
+3.2: ansible.cfg ファイルを作成・配置 下記のようにインベントリファイルのパスとロールのパスを記載しておきます。
+[defaults] inventory= ./inventory.ini roles_path= ./study/roles host_key_checking = False log_path = ~/study/ansible.log 3.3: ディレクトリ構成とファイルの役割の再確認 以下のような構成でファイルを配置します。 ※git リポジトリをクローンしてきた場合は既に下記のような構成含んだディレクトリとファイルが配置されています。
 study/ ├── ansible.cfg ├── inventory.ini ├── playbook.yml └── roles/ └── httpd/ └── tasks/ └── main.yml 各ファイルの役割 ansible.cfg - Ansibleの設定ファイル inventory.ini - 管理対象ホストのリスト playbook.yml - 自動化タスクを定義 roles/httpd/tasks/main.yml - HTTPD（Apache）をインストール・設定するタスク">
 
       
@@ -167,14 +167,14 @@ vi inventory.ini
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">svx01 ansible_host=192.168.18.10</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">svx02 ansible_host=192.168.18.11</span>
 </span></span></code></pre></div><p>このファイルにより、AnsibleがDockerコンテナに接続できるようになります。</p>
-<h2 id="32-ansiblecfg-ファイルを作成配置">3.2 ansible.cfg ファイルを作成・配置</h2>
+<h2 id="32-ansiblecfg-ファイルを作成配置">3.2: ansible.cfg ファイルを作成・配置</h2>
 <p>下記のようにインベントリファイルのパスとロールのパスを記載しておきます。</p>
 <pre tabindex="0"><code>[defaults]
 inventory= ./inventory.ini
 roles_path= ./study/roles
 host_key_checking = False
 log_path = ~/study/ansible.log
-</code></pre><h2 id="33-ディレクトリ構成とファイルの役割の再確認">3.3 ディレクトリ構成とファイルの役割の再確認</h2>
+</code></pre><h2 id="33-ディレクトリ構成とファイルの役割の再確認">3.3: ディレクトリ構成とファイルの役割の再確認</h2>
 <p>以下のような構成でファイルを配置します。
 ※git リポジトリをクローンしてきた場合は既に下記のような構成含んだディレクトリとファイルが配置されています。</p>
 <pre tabindex="0"><code>study/

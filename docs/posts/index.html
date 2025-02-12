@@ -395,7 +395,8 @@ openssh-clients,openssh-serverを追加し有効化したイメージを作成�
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Roleを更新し実行します。</p>
+      <h2 id="61-更新したロールの実行と結果確認">6.1 更新したロールの実行と結果確認</h2>
+<p>Roleを更新し実行します。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker exec -it dev-ansible /bin/bash
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>root@ccf3d9c92518 /<span style="color:#f92672">]</span><span style="color:#75715e"># su - ansible</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ansible@ccf3d9c92518 ~<span style="color:#f92672">]</span>$ cd study
@@ -451,14 +452,14 @@ vi inventory.ini
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">svx01 ansible_host=192.168.18.10</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">svx02 ansible_host=192.168.18.11</span>
 </span></span></code></pre></div><p>このファイルにより、AnsibleがDockerコンテナに接続できるようになります。</p>
-<h2 id="32-ansiblecfg-ファイルを作成配置">3.2 ansible.cfg ファイルを作成・配置</h2>
+<h2 id="32-ansiblecfg-ファイルを作成配置">3.2: ansible.cfg ファイルを作成・配置</h2>
 <p>下記のようにインベントリファイルのパスとロールのパスを記載しておきます。</p>
 <pre tabindex="0"><code>[defaults]
 inventory= ./inventory.ini
 roles_path= ./study/roles
 host_key_checking = False
 log_path = ~/study/ansible.log
-</code></pre><h2 id="33-ディレクトリ構成とファイルの役割の再確認">3.3 ディレクトリ構成とファイルの役割の再確認</h2>
+</code></pre><h2 id="33-ディレクトリ構成とファイルの役割の再確認">3.3: ディレクトリ構成とファイルの役割の再確認</h2>
 <p>以下のような構成でファイルを配置します。
 ※git リポジトリをクローンしてきた場合は既に下記のような構成含んだディレクトリとファイルが配置されています。</p>
 <pre tabindex="0"><code>study/
@@ -513,10 +514,10 @@ Microsoft Storeを開き、「Visual Studio Code」を検索し、インスト�
 <p>Dockerを使用してコンテナを簡単に構築・管理できます。
 Linuxの格ディストリビューションでのインストール方法は下記の公式ドキュメントを参照のこと
 <a href="https://docs.docker.com/engine/install/">https://docs.docker.com/engine/install/</a></p>
-<p>WindowsやMacではDocker for Windows
-Docer for Macで動かせます。
-<a href="https://docs.docker.jp/docker-for-windows/install.html">https://docs.docker.jp/docker-for-windows/install.html</a>
-<a href="https://docs.docker.jp/docker-for-mac/toc.html">https://docs.docker.jp/docker-for-mac/toc.html</a>
+<p>WindowsやMacではDocker for Windows<br>
+Docer for Macで動かせます。<br>
+<a href="https://docs.docker.jp/docker-for-windows/install.html">https://docs.docker.jp/docker-for-windows/install.html</a><br>
+<a href="https://docs.docker.jp/docker-for-mac/toc.html">https://docs.docker.jp/docker-for-mac/toc.html</a><br>
 今回はMacOSの環境で下記のバージョンを使用します。
 (WSL2のLinuxでも検証環境は立ち上げ出来たので動く筈)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker -v
