@@ -18,8 +18,10 @@ $ docker exec -it dev-ansible /bin/bash
 [ansible@ccf3d9c92518 study]$ansible-playbook -i inventory.ini playbook.yml
 ```
 
+```bash
 [ansible@ccf3d9c92518 study]$ ansible-playbook -i inventory.ini playbook.yml
 [WARNING]: log file at /home/ansible/ansible_projects/ansible.log is not writeable and we cannot create it, aborting
+```
 
 実行に成功すると下記のようにTASK で指定した状態と異なる設定はchangedで表示され
 最後にPLAY RECAPが表示されます。

@@ -205,7 +205,9 @@ svx01 | SUCCESS => {
 
 コンテナから抜けて、dockerb compose にてコンテナを削除します
 
+```bash
 [ansible@ccf3d9c92518 study]$ exit
 [root@accf3d9c92518 /]#
 $
 $ docker compose down
+```

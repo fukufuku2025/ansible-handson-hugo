@@ -354,9 +354,9 @@ openssh-clients,openssh-serverを追加し有効化したイメージを作成�
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ansible@ccf3d9c92518 study<span style="color:#f92672">]</span>$ 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ansible@ccf3d9c92518 study<span style="color:#f92672">]</span>$ansible-playbook -i inventory.ini playbook.yml
-</span></span></code></pre></div><p>[ansible@ccf3d9c92518 study]$ ansible-playbook -i inventory.ini playbook.yml
-[WARNING]: log file at /home/ansible/ansible_projects/ansible.log is not writeable and we cannot create it, aborting</p>
-<p>実行に成功すると下記のようにTASK で指定した状態と異なる設定はchangedで表示され
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ansible@ccf3d9c92518 study<span style="color:#f92672">]</span>$ ansible-playbook -i inventory.ini playbook.yml
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span>: log file at /home/ansible/ansible_projects/ansible.log is not writeable and we cannot create it, aborting
+</span></span></code></pre></div><p>実行に成功すると下記のようにTASK で指定した状態と異なる設定はchangedで表示され
 最後にPLAY RECAPが表示されます。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>PLAY <span style="color:#f92672">[</span>Deploy Apache Server<span style="color:#f92672">]</span> ************************************************************************************************************************************************************************************************************************************************
 </span></span><span style="display:flex;"><span>
